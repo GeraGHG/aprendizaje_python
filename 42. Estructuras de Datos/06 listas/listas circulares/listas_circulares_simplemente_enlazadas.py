@@ -15,7 +15,21 @@ class lista_circular_simplemente_enlazada:
         if self.vacia():
             self.primero = self.ultimo = Nodo(dato)
         else:
-            
+            aux = Nodo(dato)
+            aux.siguiente = self.primero
+            self.primero = aux
+            self.ultimo.siguiente = self.primero
+
+    def agregar_final(self, dato):
+        if self.vacia():
+            self.primero = self.ultimo = Nodo(dato)
+            self.primero.siguiente = self.primero
+        else:
+            aux = self.ultimo
+            self.ultimo = aux.siguiente = Nodo(dato)
+            self.ultimo.siguiente = self.primero
+
+
 
 
 
